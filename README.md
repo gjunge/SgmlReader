@@ -1,3 +1,5 @@
+[![Build Status](https://dev.azure.com/gidonj/SgmlReader/_apis/build/status/gjunge.SgmlReader?branchName=master)](https://dev.azure.com/gidonj/SgmlReader/_build/latest?definitionId=1&branchName=master)
+
 # SgmlReader - Convert (almost) any HTML to valid XML
 
 SgmlReader is a versatile C# .NET library written by Chris Lovett for parsing 
