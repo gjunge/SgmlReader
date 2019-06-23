@@ -19,10 +19,8 @@ using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
 using System.IO;
 using System.Net;
-#if WINDOWS_DESKTOP
 using System.Runtime.Serialization;
 using System.Security.Permissions;
-#endif
 using System.Text;
 using System.Xml;
 
@@ -30,9 +28,8 @@ namespace Sgml {
     /// <summary>
     /// Thrown if any errors occur while parsing the source.
     /// </summary>
-#if WINDOWS_DESKTOP
+
     [Serializable]
-#endif
     public class SgmlParseException : Exception
     {
         private string m_entityContext;
@@ -75,7 +72,7 @@ namespace Sgml {
         {
         }
 
-#if WINDOWS_DESKTOP
+
         /// <summary>
         /// Initializes a new instance of the SgmlParseException class with serialized data. 
         /// </summary>
@@ -87,7 +84,6 @@ namespace Sgml {
             if (streamInfo != null)
                 m_entityContext = streamInfo.GetString("entityContext");
         }
-#endif
 
         /// <summary>
         /// Contextual information detailing the entity on which the error occurred.
@@ -100,7 +96,6 @@ namespace Sgml {
             }
         }
 
-#if WINDOWS_DESKTOP
         /// <summary>
         /// Populates a SerializationInfo with the data needed to serialize the exception.
         /// </summary>
@@ -115,7 +110,6 @@ namespace Sgml {
             info.AddValue("entityContext", m_entityContext);
             base.GetObjectData(info, context);
         }
-#endif
     }
 
     /// <summary>

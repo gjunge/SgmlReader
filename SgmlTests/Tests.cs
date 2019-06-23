@@ -18,9 +18,9 @@ using System.Xml;
 using NUnit.Framework;
 using Sgml;
 using System.Xml.Linq;
-#if WINDOWS_DESKTOP
+
 using System.Xml.XPath;
-#endif
+using WhitespaceHandling = Sgml.WhitespaceHandling;
 
 namespace SGMLTests {
 

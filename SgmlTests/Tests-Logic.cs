@@ -17,6 +17,7 @@ using System.Xml;
 using log4net;
 using NUnit.Framework;
 using Sgml;
+using WhitespaceHandling = Sgml.WhitespaceHandling;
 
 namespace SGMLTests {
     public partial class Tests {

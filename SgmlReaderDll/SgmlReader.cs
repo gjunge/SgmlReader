@@ -16,9 +16,7 @@ using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
 using System.IO;
-#if !PORTABLE
 using System.Net;
-#endif
 using System.Reflection;
 using System.Text;
 using System.Xml;
@@ -329,7 +327,7 @@ namespace Sgml
         Eof
     }
 
-#if !WINDOWS_DESKTOP
+
     //
     // Summary:
     //     Specifies how white space is handled.
@@ -349,7 +347,7 @@ namespace Sgml
         //     Return no Whitespace and no SignificantWhitespace nodes.
         None = 2
     } 
-#endif
+
 
 
     /// <summary>
@@ -602,7 +600,7 @@ namespace Sgml
             }
         }
 
-#if WINDOWS_DESKTOP
+
         /// <summary>
         /// Sometimes you need to specify a proxy server in order to load data via HTTP
         /// from outside the firewall.  For example: "itgproxy:80".
@@ -627,7 +625,6 @@ namespace Sgml
                 }
             }
         }
-#endif
 
         /// <summary>
         /// The base Uri is used to resolve relative Uri's like the SystemLiteral and
@@ -770,12 +767,9 @@ namespace Sgml
             this.m_rootCount = 0;
             this.m_foundRoot = false;
             this.unknownNamespaces.Clear();
-#if WINDOWS_DESKTOP
+
             this.m_resolver = new DesktopEntityResolver();
-#endif
-#if WINDOWS_UWP
-            this.m_resolver = new UniversalEntityResolver();
-#endif
+
         }
 
         private Node Push(string name, XmlNodeType nt, string value)
@@ -1117,11 +1111,7 @@ namespace Sgml
         /// <remarks>
         /// This property applies only to an attribute node.
         /// </remarks>
-#if WINDOWS_DESKTOP
         public override char QuoteChar
-#else
-        public char QuoteChar
-#endif
         {
             get
             {
