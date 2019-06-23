@@ -25,5 +25,5 @@ steps:
     command: test
     projects: '**/*Tests/*.csproj'
     arguments: '--configuration $(buildConfiguration)'
-- script: dotnet publish --output $(Build.ArtifactStagingDirectory) --configuration $(buildConfiguration)
+- script: dotnet pack --output $(Build.ArtifactStagingDirectory) --configuration $(buildConfiguration)
 - task: PublishBuildArtifacts@1
