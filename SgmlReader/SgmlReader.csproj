@@ -13,8 +13,4 @@
   <ItemGroup>
     <ProjectReference Include="..\SgmlReaderDll\SgmlReaderDll.csproj" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Properties\" />
-  </ItemGroup>
-
 </Project>
